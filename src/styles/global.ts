@@ -10,23 +10,18 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-	  background: ${props => props.theme.colors.backgroundGradient};
+	  background: ${props => props.theme.colors.backgrounds.defaultGradient};
     background-attachment: fixed;
   }
 
-  p, a, div, button, input, textarea, label, li, td, th {
-    font-family: ${props => props.theme.fonts.main};
-    color: ${props => props.theme.colors.text};
-  }
-
-  h1 {
-    font-family: ${props => props.theme.fonts.heading};
-    color: ${props => props.theme.colors.text};
+  p, a, div, button, input, textarea, label, li, td, th, h1, h2, h3, h4, h5, h6 {
+    font-family: ${props => props.theme.typography.fontFamily.main};
+    color: ${props => props.theme.colors.text.primary};
   }
 
   span {
     font-family: inherit;
-    color: ${props => props.theme.colors.text};
+    color: inherit;
   }
 
   a, button, select, summary, details, label,
@@ -36,5 +31,10 @@ export const GlobalStyle = createGlobalStyle`
 
   input[type="text"], input[type="email"], input[type="password"], textarea {
     cursor: text;
+  }
+
+  input, input:focus {
+    outline: none;
+    border: none;
   }
 `;

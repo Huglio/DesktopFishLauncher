@@ -1,23 +1,14 @@
 import 'styled-components';
+import type { CSSProperties } from 'styled-components';
+
+export interface WithDynamicStyles {
+  $styles?: CSSProperties;
+}
+
+import 'styled-components';
+import { Theme } from './theme';
 
 declare module 'styled-components' {
-  export interface DefaultTheme {
-    colors: {
-      backgroundGradient: string;
-      text: string;
-    };
-    fonts: {
-      main: string;
-      heading: string;
-    };
-    buttons: {
-      primary: {
-        background: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        text: string;
-      };
-    };
-  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  export interface DefaultTheme extends Theme {}
 }
