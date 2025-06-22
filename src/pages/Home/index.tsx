@@ -1,37 +1,76 @@
 import { useNavigate } from 'react-router-dom';
+import { HighLight } from '../../components/atoms/Text';
+import TextWrapper from '../../components/atoms/TextWrapper';
 import HomeTemplate from '../../components/templates/Home';
+import { theme } from '../../styles/theme';
 
 export default function HomePage() {
   const navigate = useNavigate();
 
   function handleClick() {
-    navigate('/invite');
+    navigate('/create-invite');
   }
 
   return (
     <HomeTemplate
-      imageAlt="Desktop Fish Icon"
       title={
         <>
-          <span>Desktop</span> Fish
+          <HighLight>Desktop</HighLight> Fish
         </>
       }
-      subtitle="Aquário virtual interativo"
-      paragraphs={[
-        <>
-          <p>Muito obrigado por baixar o Desktop Fish!</p>
-          <p>Seu apoio é de extrema importância para mim!</p>
-        </>,
-        <>
-          <p>
-            Como não sou a favor de fazer vaquinhas, criei esse APP com o
-            objetivo de arrecadar fundos para o meu projeto principal, divulgado
-            no instagram: <a>@eusolyy</a>
-          </p>
-        </>,
+      subtitle="Já está funcionando!"
+      listTitle="COMO CUIDAR DO SEU PEIXINHO:"
+      listItems={[
+        'Não passe o mouse em cima do peixinho, isso vai estressá-lo',
+        'Deixar o mouse perto do peixinho deixa ele curioso',
+        'Interaja diariamente com o pexinho para ele se familiarizar com você',
+        'Seu peixinho vai crescer com o tempo',
       ]}
-      buttonText="Continuar"
+      imageSrc=""
+      paragraphs={[
+        <TextWrapper as="p" styles={{ marginBottom: theme.spacing.sm }}>
+          Seja um{' '}
+          <HighLight
+            $styles={{
+              fontSize: theme.typography.fontSize.lg,
+            }}
+          >
+            Afiliado!
+          </HighLight>
+        </TextWrapper>,
+        <TextWrapper
+          as="p"
+          styles={{
+            color: theme.colors.text.yellow,
+            fontWeight: 500,
+            fontSize: theme.typography.fontSize.sm,
+            marginBottom: theme.spacing.md,
+          }}
+        >
+          Ganhe{' '}
+          <HighLight
+            $styles={{
+              fontWeight: 800,
+              fontSize: theme.typography.fontSize.lg,
+            }}
+          >
+            50%
+          </HighLight>{' '}
+          de comissão em cada venda
+        </TextWrapper>,
+      ]}
+      buttonText="Criar convite"
       onButtonClick={handleClick}
+      contactUsText={
+        <>
+          Qualquer problema com o aplicativo, contato em:{' '}
+          <a>
+            <HighLight $styles={{ color: theme.colors.text.yellow }}>
+              contact@eusolyy.com
+            </HighLight>
+          </a>
+        </>
+      }
     />
   );
 }
