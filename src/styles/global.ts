@@ -19,6 +19,10 @@ export const GlobalStyle = createGlobalStyle`
     color: ${props => props.theme.colors.text.primary};
   }
 
+  a {
+    text-decoration: none;
+  }
+
   span {
     font-family: inherit;
     color: inherit;
