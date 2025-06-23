@@ -1,5 +1,4 @@
 import { theme } from '../../../styles/theme';
-import { FlexCenterContainer } from '../../atoms/FlexCenterContainer';
 import TextWrapper from '../../atoms/TextWrapper';
 import TitleHeader from '../../molecules/TitleHeader';
 import type { HomeTemplateProps } from './types';
@@ -20,7 +19,7 @@ export default function HomeTemplate({
   contactUsText,
 }: HomeTemplateProps) {
   return (
-    <FlexCenterContainer>
+    <React.Fragment>
       <TitleHeader title={title} subtitle={subtitle} />
 
       <TextWrapper
@@ -56,6 +55,6 @@ export default function HomeTemplate({
       >
         {contactUsText}
       </TextWrapper>
-    </FlexCenterContainer>
+    </React.Fragment>
   );
 }

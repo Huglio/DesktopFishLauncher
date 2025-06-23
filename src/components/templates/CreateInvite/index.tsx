@@ -1,6 +1,6 @@
+import React from 'react';
 import { theme } from '../../../styles/theme';
 import { Button } from '../../atoms/Button';
-import { FlexCenterContainer } from '../../atoms/FlexCenterContainer';
 import TextWrapper from '../../atoms/TextWrapper';
 import InputWithLabel from '../../molecules/InputWithLabel';
 import TitleHeader from '../../molecules/TitleHeader';
@@ -15,7 +15,7 @@ export default function CreateInviteTemplate({
   buttonText,
 }: CreateInviteTemplateProps) {
   return (
-    <FlexCenterContainer>
+    <React.Fragment>
       <TitleHeader title={title} subtitle={subtitle} />
 
       <TextWrapper>{paragraph}</TextWrapper>
@@ -46,6 +46,6 @@ export default function CreateInviteTemplate({
       />
 
       <Button>{buttonText}</Button>
-    </FlexCenterContainer>
+    </React.Fragment>
   );
 }
