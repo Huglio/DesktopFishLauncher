@@ -4,6 +4,7 @@ import ValidateInvitePage from '../pages/ValidateInvite';
 import ActivationPage from '../pages/Activation';
 import HomePage from '../pages/Home';
 import CreateInvitePage from '../pages/CreateInvite';
+import Breadcrumb from '../components/molecules/Breadcrumb';
 
 export default function AppRoutes() {
   return (
@@ -12,8 +13,20 @@ export default function AppRoutes() {
         <Route path="/introduction" element={<IntroductionPage />} />
         <Route path="/validate-invite" element={<ValidateInvitePage />} />
         <Route path="/activation" element={<ActivationPage />} />
-        <Route path="/" element={<HomePage />} />
-        <Route path="/create-invite" element={<CreateInvitePage />} />
+        <Route
+          path="/"
+          element={
+            <Breadcrumb
+              items={[
+                { label: 'Home', link: '/' },
+                { label: 'Criar convite', link: '/create-invite' },
+              ]}
+            />
+          }
+        >
+          <Route index element={<HomePage />} />
+          <Route path="/create-invite" element={<CreateInvitePage />} />
+        </Route>
       </Route>
     </Routes>
   );
