@@ -1,25 +1,30 @@
 import { Route, Routes } from 'react-router-dom';
-import IntroductionPage from '../pages/Introduction';
-import ValidateInvitePage from '../pages/ValidateInvite';
-import ActivationPage from '../pages/Activation';
-import HomePage from '../pages/Home';
-import CreateInvitePage from '../pages/CreateInvite';
+import IntroductionPage from '../pages/Sales/Introduction';
+import ValidateInvitePage from '../pages/Sales/ValidateInvite';
+import ActivationPage from '../pages/Sales/Activation';
+import HomePage from '../pages/Private/Home';
+import CreateInvitePage from '../pages/Private/CreateInvite';
 import Breadcrumb from '../components/molecules/Breadcrumb';
+import ProtectedRoutes from './ProtectedRoutes';
+import SaleRoutes from './SaleRoutes';
 
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route>
+      <Route element={<SaleRoutes />}>
         <Route path="/introduction" element={<IntroductionPage />} />
         <Route path="/validate-invite" element={<ValidateInvitePage />} />
         <Route path="/activation" element={<ActivationPage />} />
+      </Route>
+
+      <Route element={<ProtectedRoutes />}>
         <Route
           path="/"
           element={
             <Breadcrumb
               items={[
-                { label: 'Home', link: '/' },
-                { label: 'Criar convite', link: '/create-invite' },
+                { label: 'Home', path: '/' },
+                { label: 'Criar convite', path: '/create-invite' },
               ]}
             />
           }
