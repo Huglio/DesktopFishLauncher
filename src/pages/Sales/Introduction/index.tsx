@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import IntroductionTemplate from '../../../components/templates/Introduction';
-import DesktopFishImage from '../../assets/DesktopFishPolished.png';
+import DesktopFishImage from '../../../assets/DesktopFishPolished.png';
 import { HighLight } from '../../../components/atoms/Text';
 
 export default function IntroductionPage() {
