@@ -9,4 +9,6 @@ export const StyledTextWrapper = styled.div<WithDynamicStyles>`
   font-size: ${props => props.$styles?.fontSize};
   font-weight: ${props => props.$styles?.fontWeight ?? 'normal'};
   color: ${props => props.$styles?.color ?? props.theme.colors.text.primary};
+  position: ${props => props.$styles?.position};
+  top: ${props => props.$styles?.top};
 `;
