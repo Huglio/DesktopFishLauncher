@@ -1,4 +1,3 @@
-import { theme } from '../../../styles/theme';
 import TextWrapper from '../../atoms/TextWrapper';
 import TitleHeader from '../../molecules/TitleHeader';
 import type { HomeTemplateProps } from './types';
@@ -6,6 +5,7 @@ import * as S from './styles';
 import Image from '../../molecules/Image';
 import React from 'react';
 import { Button } from '../../atoms/Button';
+import { useTheme } from 'styled-components';
 
 export default function HomeTemplate({
   title,
@@ -18,6 +18,8 @@ export default function HomeTemplate({
   onButtonClick,
   contactUsText,
 }: HomeTemplateProps) {
+  const theme = useTheme();
+
   return (
     <React.Fragment>
       <TitleHeader title={title} subtitle={subtitle} />

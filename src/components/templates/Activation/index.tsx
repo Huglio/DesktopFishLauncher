@@ -5,7 +5,7 @@ import TitleHeader from '../../molecules/TitleHeader';
 import type { ActivationTemplateProps } from './types';
 import RealDisplay from '../../atoms/RealDisplay';
 import { Button } from '../../atoms/Button';
-import { theme } from '../../../styles/theme';
+import { useTheme } from 'styled-components';
 
 export default function ActivationTemplate({
   title,
@@ -17,8 +17,10 @@ export default function ActivationTemplate({
   buttonText,
   contactUsText,
 }: ActivationTemplateProps) {
+  const theme = useTheme();
+
   return (
-    <FlexCenterContainer>
+    <FlexCenterContainer $withMarginTop>
       <TitleHeader title={title} subtitle={subtitle} />
 
       <TextWrapper

@@ -3,8 +3,8 @@ import Image from '../../molecules/Image';
 import { FlexCenterContainer } from '../../atoms/FlexCenterContainer';
 import TitleHeader from '../../molecules/TitleHeader';
 import type { IntroductionTemplateProps } from './types';
-import { theme } from '../../../styles/theme';
 import TextWrapper from '../../atoms/TextWrapper';
+import { useTheme } from 'styled-components';
 
 export default function IntroductionTemplate({
   imageAlt,
@@ -15,8 +15,10 @@ export default function IntroductionTemplate({
   onButtonClick,
   imageSrc,
 }: IntroductionTemplateProps) {
+  const theme = useTheme();
+
   return (
-    <FlexCenterContainer>
+    <FlexCenterContainer $withMarginTop>
       <Image
         imageAlt={imageAlt}
         imageSrc={imageSrc}

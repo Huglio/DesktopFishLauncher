@@ -1,10 +1,10 @@
 import React from 'react';
-import { theme } from '../../../styles/theme';
 import { Button } from '../../atoms/Button';
 import TextWrapper from '../../atoms/TextWrapper';
 import InputWithLabel from '../../molecules/InputWithLabel';
 import TitleHeader from '../../molecules/TitleHeader';
 import type { CreateInviteTemplateProps } from './types';
+import { useTheme } from 'styled-components';
 
 export default function CreateInviteTemplate({
   title,
@@ -14,6 +14,8 @@ export default function CreateInviteTemplate({
   paragraph,
   buttonText,
 }: CreateInviteTemplateProps) {
+  const theme = useTheme();
+
   return (
     <React.Fragment>
       <TitleHeader title={title} subtitle={subtitle} />

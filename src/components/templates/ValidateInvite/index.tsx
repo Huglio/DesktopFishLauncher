@@ -15,7 +15,7 @@ export default function ValidateInviteTemplate({
   inputId,
 }: ValidateInviteTemplateProps) {
   return (
-    <FlexCenterContainer>
+    <FlexCenterContainer $withMarginTop>
       <TitleHeader title={title} subtitle={subtitle} />
 
       <TextWrapper as="p" styles={{ marginBottom: '6rem' }}>
