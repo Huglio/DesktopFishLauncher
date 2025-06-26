@@ -6,12 +6,12 @@ import { FlexCenterContainer } from '../../atoms/FlexCenterContainer';
 
 export default function Breadcrumb({ items }: BreadcrumbProps) {
   return (
-    <FlexCenterContainer>
+    <FlexCenterContainer $withMarginTop>
       <S.Nav>
         {items.map((item, index) => (
           <React.Fragment key={index}>
-            {item.link ? (
-              <S.NavLink to={item.link}>{item.label}</S.NavLink>
+            {item.path ? (
+              <S.NavLink to={item.path}>{item.label}</S.NavLink>
             ) : (
               item.label
             )}

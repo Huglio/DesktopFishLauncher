@@ -4,5 +4,5 @@ export type BreadcrumbProps = {
 
 type BreadcrumbItems = {
   label: string;
-  link: string;
+  path: string;
 };
