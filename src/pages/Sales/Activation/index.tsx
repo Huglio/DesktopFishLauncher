@@ -1,8 +1,10 @@
-import { HighLight } from '../../components/atoms/Text';
-import ActivationTemplate from '../../components/templates/Activation';
-import { theme } from '../../styles/theme';
+import { useTheme } from 'styled-components';
+import { HighLight } from '../../../components/atoms/Text';
+import ActivationTemplate from '../../../components/templates/Activation';
 
 export default function ActivationPage() {
+  const theme = useTheme();
+
   return (
     <ActivationTemplate
       title={<HighLight>Ativação</HighLight>}

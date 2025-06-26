@@ -1,5 +1,5 @@
-import { HighLight } from '../../components/atoms/Text';
-import CreateInviteTemplate from '../../components/templates/CreateInvite';
+import { HighLight } from '../../../components/atoms/Text';
+import CreateInviteTemplate from '../../../components/templates/CreateInvite';
 
 export default function CreateInvitePage() {
   return (

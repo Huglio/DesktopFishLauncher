@@ -1,5 +1,5 @@
-import { HighLight } from '../../components/atoms/Text';
-import ValidateInviteTemplate from '../../components/templates/ValidateInvite';
+import { HighLight } from '../../../components/atoms/Text';
+import ValidateInviteTemplate from '../../../components/templates/ValidateInvite';
 
 export default function ValidateInvitePage() {
   return (

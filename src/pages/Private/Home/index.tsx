@@ -1,11 +1,12 @@
 import { useNavigate } from 'react-router-dom';
-import { HighLight } from '../../components/atoms/Text';
-import TextWrapper from '../../components/atoms/TextWrapper';
-import HomeTemplate from '../../components/templates/Home';
-import { theme } from '../../styles/theme';
+import { HighLight } from '../../../components/atoms/Text';
+import TextWrapper from '../../../components/atoms/TextWrapper';
+import HomeTemplate from '../../../components/templates/Home';
+import { useTheme } from 'styled-components';
 
 export default function HomePage() {
   const navigate = useNavigate();
+  const theme = useTheme();
 
   function handleClick() {
     navigate('/create-invite');
