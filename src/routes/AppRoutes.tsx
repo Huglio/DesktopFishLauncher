@@ -7,6 +7,7 @@ import CreateInvitePage from '../pages/Private/CreateInvite';
 import Breadcrumb from '../components/molecules/Breadcrumb';
 import ProtectedRoutes from './ProtectedRoutes';
 import SaleRoutes from './SaleRoutes';
+import PageNotFound from '../pages/Error/PageNotFound';
 
 export default function AppRoutes() {
   return (
@@ -33,6 +34,7 @@ export default function AppRoutes() {
           <Route path="/create-invite" element={<CreateInvitePage />} />
         </Route>
       </Route>
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 }

@@ -4,6 +4,7 @@ import { useSession } from '../hooks/useSession';
 import { toast } from 'react-toastify';
 import { Outlet } from 'react-router-dom';
 import LoadingFish from '../components/molecules/LoadingFish';
+import UnexpectedErrorPage from '../pages/Error/UnexpectedError';
 
 export default function SaleRoutes() {
   const { token, setToken } = useSession();
@@ -25,7 +26,7 @@ export default function SaleRoutes() {
         // }
         setToken('token');
       } catch {
-        toast.error('Unexpected Error', {
+        toast.error('Erro Inesperado', {
           toastId: 'user-fetch-error',
         });
         setToken(null);
@@ -41,11 +42,5 @@ export default function SaleRoutes() {
     return <LoadingFish loadingText="Carregando" />;
   }
 
-  return token ? (
-    <Outlet />
-  ) : (
-    <div>
-      Um erro inesperado aconteceu, contate o suporte em: contact@eusolyy.com
-    </div>
-  );
+  return token ? <Outlet /> : <UnexpectedErrorPage />;
 }
