@@ -1,4 +1,5 @@
 export type SessionContextType = {
   token: string | null;
-  setToken: (token: string | null) => void;
+  setToken: (newToken: string | null) => Promise<void>;
+  sessionLoading: boolean;
 };
