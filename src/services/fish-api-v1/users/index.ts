@@ -1,5 +1,5 @@
 import type { AxiosResponse } from 'axios';
-import api from '../axios';
+import api from '../../axios';
 import type { UserWithToken } from './types';
 
 export async function getUser(): Promise<
